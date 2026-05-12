@@ -1,0 +1,17 @@
+Método de Newton-Raphson con tolerancias de error
+
+Buscar una solución de f(x)=0 si la aproximación inicial es p0:
+
+ENTRADA: aproximación inicial p0, tolerancia TOL y número máximo de iteraciones N.
+SALIDA: solución aproximada p o mensaje de fracaso.
+
+Paso 1 Determine i = 1.
+Paso 2 Mientras i ≤ N haga los pasos 3–6. 
+  Paso 3 Determine p = p0 − f(p0)/ f'(p0). //calcular nueva valor de aproximación, p
+  Paso 4 Si |p − p0| < TOL entonces
+    SALIDA (p); //el procedimiento tuvo éxito
+    PARE.
+Paso 5 Determine i = i + 1.
+Paso 6 Determine p0 = p. //actualizar p0
+Paso 7 SALIDA ("El método falló después de N iteraciones, N =", N); //El procedimiento no tuvo éxito.
+       PARE.	
