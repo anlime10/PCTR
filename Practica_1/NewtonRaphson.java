@@ -1,36 +1,20 @@
 public class NewtonRaphson {
-    private static void newtonraphson(double x0,int iteraciones)
+    private static void newtonraphson (double x0, int iter) //metodo newtonrapshon , Precondición entra double de primera aproximación y numero de iteraciones
     {
-        double xN=x0,xN1=xN;
-        for (int i=0; i<iteraciones ;i++)
+        for (int i=1; i<=iter;i++)
         {
-            if (Math.cos(xN)-xN*xN*xN != 0)
-            {
-                xN1=xN-((Math.cos(xN)-Math.pow(xN,3))/(-Math.sin(xN)-3*Math.pow(xN,2)));
-                System.out.printf("Iteracion: %d. Aproximacion %f.%n",i,xN1);
-            }
-            xN=xN1;
+            //x0=x0-((Math.cos(x0)-Math.pow(x0,3))/(-Math.sin(x0)-3*Math.pow(x0,2)));
+            x0=x0-((Math.pow(x0,2)-5)/(2*x0));
+            System.out.printf("Aproximacion %f,iteracion %d\n",x0,i);
         }
-        System.out.printf("Resultado: %f",xN);
-    }
-    public static void main(String[] args) 
-    {
-        double dato0;
-        int dato1;
-        if (args.length == 0)
-        {
-            System.out.println ("Debe dar una funcion como argumento...");
-            System.exit(-1);
-        }
-        else
-        try {
-        double firstArg = Double.parseDouble(args[0]);
-        }    catch (NumberFormatException e) {
-        System.err.println("Argument" + args[0] + " must be an integer.");
-        System.exit(1);
-        }
-        dato0= Double.parseDouble(args[0]);
-        dato1= Integer.parseInt(args[1]);
-        newtonraphson(dato0,dato1);
+    } 
+    public static void main(String[] args) {
+        if (args.length < 2){
+      System.out.println ("Debe dar un double y un int como argumentos");
+      System.exit(-1);
+     }
+     double x0 = Double.parseDouble(args[0]);
+     int x1 = Integer.parseInt(args[1]);
+     newtonraphson(x0,x1);
     }
 }

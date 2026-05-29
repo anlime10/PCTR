@@ -1,9 +1,9 @@
 import java.util.concurrent.Callable;
-public class tareaPrimos implements Callable{
+public class tareaPrimos implements Callable<Long>{
    
   private final long linf;
   private final long lsup;
-  private Long total = new Long(0);
+  private Long total = 0;
    	
   public tareaPrimos(long linf, long lsup){
     this.linf = linf;
