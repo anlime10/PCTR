@@ -3,8 +3,7 @@ public class ClasesES1{
   public static void main(String[] args)
    throws Exception{
   System.out.println("ahora vamos a leer y escribir desde tecladoa pantalla");
-  BufferedReader dato = new BufferedReader(
-  new InputStreamReader(System.in));
+  BufferedReader dato = new BufferedReader(new InputStreamReader(System.in));
   short q = Short.parseShort(dato.readLine());
   System.out.println(2*q);
   int x = Integer.parseInt(dato.readLine());

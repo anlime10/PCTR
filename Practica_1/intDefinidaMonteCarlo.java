@@ -1,33 +1,28 @@
+import java.util.concurrent.ThreadLocalRandom;
 public class intDefinidaMonteCarlo {
-    private static void MonteCarlo(int n)
+    private static double montecarlo(int n_puntos)
     {
-        double contador_exitos=0;
-        for (int i=0;i<n;i++)
+        int C=0;
+        double M=1; //Con seno es 0.8415
+        for (int i=0;i<n_puntos;i++)
         {
-            double x=Math.random(),y=Math.random();
-            if(y<=x)
+            double x_i=Math.random();
+            double x_y=ThreadLocalRandom.current().nextDouble(0,M);
+            if (x_y<= Math.sin(x_i)) //Math.sin(x_i)
             {
-                contador_exitos++;
+                C++;
             }
         }
-        System.out.printf("Integral aproximada: %f",contador_exitos/(double) n);
+        return M*((double)C/n_puntos);
     }
     public static void main(String[] args) {
-    int dato0;
-    if (args.length == 0)
+        if (args.length==0)
         {
-            System.out.println ("Debe dar una funcion como argumento...");
-            System.exit(-1);
+            System.out.println("Introduce un entero");
         }
         else
-        try {
-        int firstArg = Integer.parseInt(args[0]);
-        }    catch (NumberFormatException e) {
-        System.err.println("Argument" + args[0] + " must be an integer.");
-        System.exit(1);
+        {
+            System.out.printf("El resultado mediante montecarlo es %f\n",montecarlo(Integer.parseInt(args[0])));
         }
-        dato0= Integer.parseInt(args[0]);
-        MonteCarlo(dato0);
     }
 }
-
