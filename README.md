@@ -28,3 +28,5 @@ Aquí encontrarás todo lo necesario para machacar las prácticas y los exámene
 Si encuentras algún bug, una solución más optimizada o quieres aportar tus propios ejercicios para ayudar a las siguientes generaciones a sobrevivir a la asignatura, ¡los **Pull Requests** son más que bienvenidos!
 
 *¡Mucho ánimo, no te rindas y a por el aprobado!* 💪🔥
+
+Créditos de gente que ha ayudado en la creación de distintos archivos del repositorio: CamavingaGII, JesusLagares y Anlaim.
