@@ -11,7 +11,7 @@ Este repositorio es tu **salvación definitiva** para aprobar la asignatura de *
 Aquí encontrarás todo lo necesario para machacar las prácticas y los exámenes de la asignatura:
 
 * **🎯 Plantillas Vacías (Para Practicar):** Si prefieres picar código desde cero y ponerte a prueba, tienes disponible una [**Release Version**](../../releases) con todos los archivos limpios y listos para rellenar.
-* **💡 Soluciones Completas:** ¿Te has atascado en algún semáforo, monitor o sección crítica? Puedes consultar todas las soluciones explicadas y resueltas directamente en la rama [`main`](../../tree/main) del repositorio.
+* **💡 Soluciones de Prácticas:** Gran parte de los ejercicios de prácticas han sido resueltos para por si en medio de tu estudio te apetece consultar las soluciones en la rama [`main`](../../tree/main) del repositorio.
 
 ---
 

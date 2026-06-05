@@ -1,0 +1,1 @@
+TBH bastante useless esta práctica con los apuntes puedes aprender lo mismo si alguien quiere hacer un PR con la práctica hecha en un futuro que lo comunique.
