@@ -1,9 +1,9 @@
 import java.util.concurrent.*;
 
 public class FactorialTask implements Callable<Integer> {
-    int number;¡
+    public int number;
     public Integer call() throws InvalidParamaterException {
-        int fact = 1
+        int fact = 1;
         for(int count = number; count > 1; count--) {
             fact = fact * count;
         }
