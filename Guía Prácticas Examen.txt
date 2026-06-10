@@ -53,3 +53,4 @@ MPI.COMM_WORLD.Scan: Todos los procesos reciben una operacion.
 Ejecutamos: iniciando el servicio de nombre DNS de MPJ.
 Lanzamos el servidor MPJ 
 Ejecutamos los servicios.
+C++

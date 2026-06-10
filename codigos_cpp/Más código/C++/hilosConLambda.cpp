@@ -1,0 +1,22 @@
+#include <iostream>
+#include <thread>
+#include <vector>
+using namespace std;
+
+
+
+
+
+int main()
+{
+  vector<thread> hilos;
+  int nHilos = 100;
+
+  for(int i=0; i<nHilos; ++i)
+    {hilos.push_back(thread([](){cout <<"Hola Mundo..." << this_thread::get_id()<< " ";}));}
+
+  for(auto& thread : hilos){thread.join();}
+
+  cout << "Hilo main tambien saluda...";
+  return(0);
+}
