@@ -1,0 +1,55 @@
+Threads:
+Implements Runnable
+extends Thread
+La cosa esta en hacer una tarea public void run() donde se ejecuta el código concurrente
+Thread Pools:
+ExecutorService "Nombre de la variable" = MUCHOS TIPOS:
+Executors.newFixedThreadPool(n);
+Executors.newCachedThreadPool;
+ThreadPoolExecutor (n_hebras_min,n_hebras_max,tiempo 0L,unidad de tiempo TimeUnit.MILISECONDS, new LinkedBlockingQueue<>())
+Los ejecutores los ejecutamos de la siguiente forma:
+RUNNABLE
+ejecutor.exectute() en caso de haber hecho un implements Runnable
+CALLABLE
+Future<T>=ejecutor.submit en caso de usar Callable<T>.
+Siempre usaremos eso en bucles (para sacar todos los valores de los hilos) por lo que future normalmente sera una ArrayList<Future<T>>
+List<Future<Integer>> futures = new ArrayList<>();
+Despues de esos dos metodos usaremos ejecutor.shutdown para APAGAR PERO NO BLOQUEAR.
+BLOQUEAREMOS con awaitTermination()
+API Estándar
+Tenemos tres modelos de gestión de la concurrencia:
+Semaforos
+Monitores
+Regiones críticas
+Aquí usaremos solo MONITORES que consistiran en hacer una clase monitor con x metodos synchronized donde usaremos un while condiciones
+dentro hay un wait() y luego tenemos NotifyAll() al final, las condiciones solo se ponen si son necesarias, 
+algunas veces necesitaremos inicio de un metodo y final de ese metodo por separado para gestionar cosas externas a la clase.
+API ALTO NIVEL
+Cerrojos: ReentrantLock
+lock.lock() luego try codigo protegido y luego finally lock.unlock() se usa en el void run()
+Semaforos: Semaphore 
+Sem.acquire luego codigo protegido y luego Sem.release
+Barreras: CyclicBarrier
+CyclicBarrier = new CyclicBarrier(n_hebras, ()->{Mensaje al cumplirse la barrera})
+barrera.await() Esperan.
+Monitores con Lock sobretodo.
+MPJ EXPRESS
+MPI.init()
+MPI.COMM_WORLD.Size() Numero de procesos
+MPI.COMM_WORLD.Rank() Id del proceso actual
+MPI.Finalize()
+P2P
+Send(buffer,desplazmiento,numero de elementos,tipo,rank del otro proceso,id de mensaje)
+Recv()
+SON BLOQUEANTES Y ASINCRONAS.
+COMUNICACION COLECTIVA
+MPI.COMM_WORLD.Barrier: Sincroniza como una barrera normal
+MPI.COMM_WORLD.Bcast(buffer,desplazamiento,numero de elementos,tipo,id del mensaje): Broadcast de un proceso manda un dato a todos los demas.
+MPI_Scatter: Reparte partes del buffer en procesos. osea buffer[0] a P0, buffer[1] a P1...
+MPI.COMM_WORLD.Scatter(origen:buffer,desplz,n_elementos,tipo,recibe:buffer,desplz,n_elementos,tipo,root 0)
+MPI.COMM_WORLD.Gather(origen:buffer,desplz,n_elementos,tipo,recibe:buffer,desplz,n_elementos,tipo,root 0): recolecta datos de todos en uno
+MPI.COMM_WORLD.Reduce(buffer,idsender,buffer,idereceiver,n_datos,tipo,Operacion,root 0)
+MPI.COMM_WORLD.Scan: Todos los procesos reciben una operacion.
+Ejecutamos: iniciando el servicio de nombre DNS de MPJ.
+Lanzamos el servidor MPJ 
+Ejecutamos los servicios.
